@@ -99,6 +99,7 @@ header {
     letter-spacing: 0.05em;
     background: var(--gradient-main);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: flex;
     align-items: center;
@@ -495,4 +496,183 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
+}
+
+/* Highlight Box for Intro */
+.highlight-box {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    margin: 3rem 0;
+    text-align: center;
+    font-weight: 700;
+    border-left: 4px solid var(--accent);
+    color: var(--text-light);
+    border: 1px solid var(--glass-border);
+    border-left-width: 4px;
+    /* Ensure accent border takes precedence or coexist */
+}
+
+/* Company Info Grid Modifier */
+.mv-grid.info-grid {
+    grid-template-columns: 1fr;
+}
+
+.info-grid .mv-card {
+    text-align: left;
+}
+
+.info-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.info-item h4 {
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.info-item p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    margin-bottom: 0;
+}
+
+/* Timeline Content List Fix */
+.timeline-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    color: var(--text-gray);
+    text-align: left;
+    /* Always left align lists for readability */
+}
+
+/* Ensure even items (reversed layout) still have readable lists */
+.timeline-item:nth-child(even) .timeline-content .timeline-list {
+    text-align: left;
+    /* Reset padding/margin if needed, but keeping it standard is usually best */
+}
+
+/* Organizational Chart Tree Layout */
+.org-chart-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
+}
+
+.org-tree,
+.org-tree ul,
+.org-tree li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.org-tree ul {
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.org-tree li {
+    text-align: center;
+    position: relative;
+    padding: 20px 10px 0 10px;
+}
+
+.org-tree li::before,
+.org-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid var(--glass-border);
+    width: 50%;
+    height: 20px;
+}
+
+.org-tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid var(--glass-border);
+}
+
+.org-tree li:only-child::after,
+.org-tree li:only-child::before {
+    display: none;
+}
+
+.org-tree li:only-child {
+    padding-top: 0;
+}
+
+.org-tree li:first-child::before,
+.org-tree li:last-child::after {
+    border: 0 none;
+}
+
+.org-tree li:last-child::before {
+    border-right: 1px solid var(--glass-border);
+    border-radius: 0 5px 0 0;
+}
+
+.org-tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+.org-tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid var(--glass-border);
+    width: 0;
+    height: 20px;
+}
+
+.org-node-box {
+    border: 1px solid var(--glass-border);
+    padding: 0.8rem 1.2rem;
+    display: inline-block;
+    border-radius: 10px;
+    background: var(--card-bg);
+    min-width: 140px;
+    transition: var(--transition);
+    position: relative;
+    z-index: 10;
+    cursor: default;
+}
+
+.org-node-box:hover {
+    border-color: var(--primary);
+    background: rgba(14, 165, 233, 0.1);
+    transform: translateY(-3px);
+}
+
+.org-node-role {
+    display: block;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.5px;
+}
+
+.org-node-name {
+    display: block;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.org-node-root .org-node-box {
+    border-color: var(--secondary);
+    background: rgba(99, 102, 241, 0.1);
 }
