@@ -122,7 +122,12 @@
 
                 <!-- Right: Form -->
                 <div class="form-section">
-                    <form action="#" method="post">
+                    <!-- 使用 Formspree 靜態表單服務來發送郵件 -->
+                    <!-- 注意：企業端需要至 https://formspree.io/ 註冊並取得正式 ID 後替換下方 '#' -->
+                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="post">
+                        <!-- 隱藏欄位：自定義郵件主題 -->
+                        <input type="hidden" name="_subject" value="來自官網的新客戶諮詢">
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">您的姓名 <span>*</span></label>
@@ -183,8 +188,12 @@
                             </label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-submit">送出諮詢表單</button>
+                        <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">送出諮詢表單</button>
                         <p class="response-commitment">我們將在 1 個工作天內由專人回覆您的訊息</p>
+
+                        <!-- 提交狀態提示 -->
+                        <div id="formStatus"
+                            style="margin-top: 1.5rem; padding: 1rem; border-radius: 10px; display: none;"></div>
                     </form>
                 </div>
             </div>
@@ -264,6 +273,58 @@
         </div>
     </footer>
 
+    <script>
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+
+            // 檢查 Formspree ID 是否已填寫 (排除佔位符)
+            if (form.action.includes('YOUR_FORMSPREE_ID')) {
+                alert('請先在 contact.html 中配置您的 Formspree ID。');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = '正在送出...';
+
+            status.style.display = 'block';
+            status.style.background = 'rgba(14, 165, 233, 0.1)';
+            status.style.color = 'var(--text-dim)';
+            status.innerText = '正在傳送您的訊息，請稍候...';
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    status.style.background = 'rgba(16, 185, 129, 0.2)';
+                    status.style.color = '#6ee7b7';
+                    status.innerText = '感謝您的來信！我們已收到您的諮詢，將儘快處理。';
+                    form.reset();
+                    submitBtn.innerText = '送出成功';
+                } else {
+                    const data = await response.json();
+                    throw new Error(data.error || '傳送失敗');
+                }
+            } catch (error) {
+                status.style.background = 'rgba(239, 68, 68, 0.2)';
+                status.style.color = '#fca5a5';
+                status.innerText = '抱歉，發生錯誤：' + error.message + '。請稍後再試，或直接來信 tmvcserv@tmvc.com.tw';
+                submitBtn.disabled = false;
+                submitBtn.innerText = '重新送出';
+            }
+        };
+    </script>
 </body>
 
 </html>
