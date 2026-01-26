@@ -1,0 +1,269 @@
+/* software.css - AI Vision Inspection Software Page Styles */
+
+:root {
+    --sw-primary: #3b82f6;
+    --sw-secondary: #0ea5e9;
+    --sw-accent: #6366f1;
+    --sw-bg-dark: #0f172a;
+    --sw-card-bg: #1e293b;
+}
+
+.software-hero {
+    background: linear-gradient(135deg, var(--sw-bg-dark) 0%, #1e1b4b 100%);
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.software-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('hero-bg.png') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.software-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.software-hero h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.challenge-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.challenge-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.challenge-card h3 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.challenge-card p {
+    color: var(--text-dim);
+}
+
+.tech-highlights {
+    background: var(--dark-bg);
+    padding: 100px 0;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.highlight-item {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--sw-primary);
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--sw-primary);
+    transform: scale(1.05);
+}
+
+.highlight-item h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.highlight-item p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.workflow-section {
+    padding: 100px 0;
+}
+
+.workflow-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.workflow-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-num {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.app-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    background: linear-gradient(45deg, #1e293b, #334155);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-card:nth-child(2n) {
+    background: linear-gradient(45deg, #0f172a, #1e293b);
+}
+
+.app-card:nth-child(3n) {
+    background: linear-gradient(45deg, #1e1b4b, #312e81);
+}
+
+.app-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+    z-index: 1;
+}
+
+.app-card span {
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Case Study Styles */
+.case-study-section {
+    padding: 100px 0;
+    background: var(--dark-bg);
+}
+
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.case-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.case-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.case-info {
+    padding: 2rem;
+}
+
+.case-tag {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--sw-primary);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.case-card h3 {
+    margin-bottom: 1rem;
+}
+
+.case-card ul {
+    list-style: none;
+    padding: 0;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+.case-card li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.case-card li::before {
+    content: '✓';
+    margin-right: 0.8rem;
+    color: #10b981;
+    font-weight: bold;
+}
+
+.arch-box {
+    background: var(--sw-card-bg);
+    color: white;
+    padding: 4rem;
+    border-radius: 30px;
+    margin: 4rem 0;
+}
+
+@media (max-width: 768px) {
+    .workflow-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+}
