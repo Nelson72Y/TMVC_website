@@ -123,8 +123,8 @@
                 <!-- Right: Form -->
                 <div class="form-section">
                     <!-- 使用 Formspree 靜態表單服務來發送郵件 -->
-                    <!-- 注意：企業端需要至 https://formspree.io/ 註冊並取得正式 ID 後替換下方 '#' -->
-                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="post">
+                    <!-- 注意：目前已預設使用 tmvcserv@tmvc.com.tw 接收郵件。若日後註冊 Formspree 帳號取得正式 ID 可再行更換 -->
+                    <form id="contactForm" action="https://formspree.io/tmvcserv@tmvc.com.tw" method="post">
                         <!-- 隱藏欄位：自定義郵件主題 -->
                         <input type="hidden" name="_subject" value="來自官網的新客戶諮詢">
 
@@ -281,11 +281,8 @@
         form.onsubmit = async (e) => {
             e.preventDefault();
 
-            // 檢查 Formspree ID 是否已填寫 (排除佔位符)
-            if (form.action.includes('YOUR_FORMSPREE_ID')) {
-                alert('請先在 contact.html 中配置您的 Formspree ID。');
-                return;
-            }
+            // 表單已配置正確的接收信箱或 ID
+
 
             submitBtn.disabled = true;
             submitBtn.innerText = '正在送出...';
@@ -319,7 +316,13 @@
             } catch (error) {
                 status.style.background = 'rgba(239, 68, 68, 0.2)';
                 status.style.color = '#fca5a5';
-                status.innerText = '抱歉，發生錯誤：' + error.message + '。請稍後再試，或直接來信 tmvcserv@tmvc.com.tw';
+
+                let errorMsg = error.message;
+                if (errorMsg.includes("isn't set up yet")) {
+                    errorMsg = '表單尚未啟用。請務必至 tmvcserv@tmvc.com.tw 收取 Formspree 的確認信並點擊「Activate Form」按鈕。';
+                }
+
+                status.innerText = '抱歉，發生錯誤：' + errorMsg + '。請稍後再試，或直接來信 tmvcserv@tmvc.com.tw';
                 submitBtn.disabled = false;
                 submitBtn.innerText = '重新送出';
             }
