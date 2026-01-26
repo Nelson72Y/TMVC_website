@@ -4,22 +4,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>工業相機 | 天目科技</title>
-    <meta name="description" content="天目科技工業相機系列 - 高解析面陣相機、高速線掃描相機、波長掃描相機等專業視覺組件。">
+    <title>16K 高解析度光纖線陣相機 | 天目科技</title>
+    <meta name="description" content="天目科技 16K 高解析度光纖線陣相機系列 - 針對高速檢測與精密測量的工程選型指南。包含 DXL 與 XLP 系列，具備極高靈敏度與高色彩還原特性。">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="products.css">
     <style>
-        .filter-btn {
-            display: inline-block;
-            text-decoration: none;
+        :root {
+            --primary-glow: rgba(14, 165, 233, 0.15);
+            --secondary-glow: rgba(99, 102, 241, 0.1);
+        }
+
+        .camera-hero {
+            background: radial-gradient(circle at top right, var(--primary-glow), transparent 40%),
+                radial-gradient(circle at bottom left, var(--secondary-glow), transparent 40%);
+            padding: 160px 0 100px;
+            text-align: center;
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .camera-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header {
+            margin: 6rem 0 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .architecture-box {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 3.5rem;
+            border-radius: 24px;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .architecture-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--gradient-main);
+        }
+
+        .architecture-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .arch-item h4 {
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .arch-item p {
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(14, 165, 233, 0.04);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+        }
+
+        .feature-card .model-id {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            opacity: 0.8;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding: 0;
+            color: var(--text-dim);
+            flex-grow: 1;
+        }
+
+        .feature-card li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .feature-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .spec-container {
+            margin: 4rem 0;
+            background: var(--card-bg);
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .spec-table th,
+        .spec-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .spec-table th {
+            background: rgba(14, 165, 233, 0.08);
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .spec-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .spec-table .param-name {
+            color: var(--text-gray);
+            font-weight: 500;
+            width: 25%;
+        }
+
+        .highlight-val {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .info-card {
+            background: rgba(30, 41, 59, 0.4);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-card h3 {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-card h3::before {
+            content: '';
+            width: 4px;
+            height: 28px;
+            background: var(--gradient-main);
+            border-radius: 2px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            margin-bottom: 1.2rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .info-list b {
+            color: var(--text-dim);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .guide-section {
+            background: var(--section-bg);
+            padding: 6rem 2rem;
+            border-radius: 40px;
+            margin: 6rem 0;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .guide-card {
+            background: var(--dark-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border-top: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            border-top-width: 6px;
+        }
+
+        .guide-card h4 {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 1.3rem;
+        }
+
+        .guide-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .guide-card strong {
+            color: var(--accent);
+        }
+
+        @media (max-width: 992px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .camera-hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -44,97 +331,244 @@
     </header>
 
     <main>
-        <!-- Page Hero -->
-        <section class="page-hero">
+        <!-- Hero Section -->
+        <section class="camera-hero">
             <div class="container">
-                <h1>工業相機</h1>
-                <p>提供多樣化解析度、介面與感測器選擇，滿足各種工業現場的成像需求。</p>
+                <div class="breadcrumb" style="margin-bottom: 2rem; color: var(--text-gray); font-size: 0.9rem;">
+                    <a href="products.html">產品介紹</a> > <a href="cameras.html">工業相機</a> > 16K 高解析線陣系列
+                </div>
+                <h1>16K 高解析度光纖線陣相機</h1>
+                <p
+                    style="font-size: 1.5rem; color: var(--text-dim); max-width: 900px; margin: 0 auto; line-height: 1.6; font-weight: 300;">
+                    共享核心架構，適配不同場景：<br>
+                    從<b>極致感光</b>到<b>高色彩還原</b>，再到<b>緊湊型低功耗</b>。
+                </p>
             </div>
         </section>
 
         <section class="container">
-            <!-- Classification Buttons -->
-            <div class="filter-section">
-                <div class="filter-list">
-                    <a href="products.html" class="filter-btn">全部產品</a>
-                    <a href="cameras.html" class="filter-btn active">工業相機</a>
-                    <button class="filter-btn">光學鏡頭</button>
-                    <button class="filter-btn">機器視覺光源</button>
-                    <a href="measuring.html" class="filter-btn">量測儀器</a>
-                    <button class="filter-btn">AI 影像檢測軟體</button>
-                    <button class="filter-btn">專案設計服務</button>
+
+            <!-- Core Tech -->
+            <div class="architecture-box" style="margin-top: 4rem;">
+                <h3>系列核心架構優勢</h3>
+                <div class="architecture-grid">
+                    <div class="arch-item">
+                        <h4>16K 解析度</h4>
+                        <p>16384 像素橫向寬度，專為大面積、高精度表面檢測量身打造。</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>5µm 像元尺寸</h4>
+                        <p>在保證高動態範圍的同時，提供卓越的 MTF 成像表現與感光效能。</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>光纖傳輸協議</h4>
+                        <p>適配 10G/20G SFP+ 接口，支援長達數公里的數據無損即時傳輸。</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>智慧 ISP 功能</h4>
+                        <p>內建硬體級 FPN 校正、PRNU 平場修正及多維度顏色空間轉換。</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="spec-table-container">
-                <table class="spec-table" id="cameraTable">
+            <!-- Features Cards -->
+            <div class="feature-grid">
+                <!-- TDI -->
+                <article class="feature-card">
+                    <h3>極高靈敏度系列</h3>
+                    <div class="model-id">DXL16K12CT-H1NF</div>
+                    <ul>
+                        <li><b>4TDI 增強模式</b>：感光度大幅提升，適用於極高速、低照度的光源檢測場景。</li>
+                        <li><b>20G 双光口接口</b>：自主研發傳輸協議，突破萬兆頻寬瓶頸，確保數據傳輸零丟包。</li>
+                        <li><b>主動散熱方案</b>：內置靜音風扇，在高效運行下維持極低的熱噪聲。</li>
+                    </ul>
+                </article>
+
+                <!-- Color -->
+                <article class="feature-card">
+                    <h3>高色彩還原系列</h3>
+                    <div class="model-id">DXL16K6C-H1N-F4</div>
+                    <ul>
+                        <li><b>6-Line 高端傳感器</b>：具備更高階的色彩深度與分離度，完美還原物體真實本色。</li>
+                        <li><b>優化色彩算法</b>：支援多通道色彩平衡校正，適用於包裝印刷及紡織品檢測。</li>
+                        <li><b>卓越一致性</b>：高穩定性的成像輸出，是精密彩色AOI系統的核心首選。</li>
+                    </ul>
+                </article>
+
+                <!-- Compact -->
+                <article class="feature-card" style="border-color: var(--secondary);">
+                    <h3>緊湊節能型系列</h3>
+                    <div class="model-id">XLP16K3C-H2N-F4</div>
+                    <ul>
+                        <li><b>超薄機身設計</b>：深厚度減少 30% (僅55.5mm)，完美適配空間受限的自動化設備。</li>
+                        <li><b>7.2W 極低功耗</b>：採用被動式散熱紋理優化，有效降低系統發熱量。</li>
+                        <li><b>GenICam 標準</b>：10G 萬兆網單光口，隨插即用，支援主流視覺軟體庫。</li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- Specs Table -->
+            <div class="section-header">
+                <h2>核心規格參數對比</h2>
+                <div style="width: 60px; height: 3px; background: var(--gradient-main); margin: 0 auto;"></div>
+            </div>
+
+            <div class="spec-container">
+                <table class="spec-table">
                     <thead>
-                        <tr id="tableHeader">
-                            <!-- Headers will be injected here -->
+                        <tr>
+                            <th>Parameter</th>
+                            <th>DXL16K12CT (極高感度)</th>
+                            <th>DXL16K6C (高保真)</th>
+                            <th>XLP16K3C (緊湊型)</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody">
-                        <!-- Data will be injected here -->
+                    <tbody>
+                        <tr>
+                            <td class="param-name">傳感器類型</td>
+                            <td>CMOS 全局快門</td>
+                            <td>CMOS 全局快門</td>
+                            <td>CMOS 全局快門</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">成像模式</td>
+                            <td class="highlight-val">4TDI 模式</td>
+                            <td class="highlight-val">6-Line 模式</td>
+                            <td class="highlight-val">3-Line 模式</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">解析度</td>
+                            <td>16384 × 12</td>
+                            <td>16384 × 6</td>
+                            <td>16384 × 3</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">數據接口</td>
+                            <td>20G 双光口 (自研)</td>
+                            <td>20G 双光口 (自研)</td>
+                            <td>10G 單光口 (GigE)</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">最大行頻</td>
+                            <td>40.5 KHz</td>
+                            <td>40.0 KHz</td>
+                            <td>29.0 KHz / 23.7 KHz</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">典型功耗</td>
+                            <td>
+                                < 12 W</td>
+                            <td>
+                                < 12 W</td>
+                            <td>7.2 W</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">外型尺寸</td>
+                            <td>99x95x85.5 mm</td>
+                            <td>99x95x85.5 mm</td>
+                            <td>99x95x55.5 mm</td>
+                        </tr>
+                        <tr>
+                            <td class="param-name">ISP 功能</td>
+                            <td>FPN, 平場, 顏色空間</td>
+                            <td>FPN, 平場, 顏色空間</td>
+                            <td>明暗場, 鏡頭陰影, 均勻度</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- 引入數據檔案，這能確保在本地端也能同步更新 -->
-            <script src="products/camera/camera_data.js"></script>
-            <script>
-                async function loadCameraSpecs() {
-                    const tableBody = document.getElementById('tableBody');
-                    const headerRow = document.getElementById('tableHeader');
-                    let csvContent = "";
+            <!-- Optical & Mechanical -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>光譜與成像特性</h3>
+                    <ul class="info-list">
+                        <li>
+                            <b>寬光譜響應對比</b>
+                            DXL系列針對 RGB 三通道進行深度優化，藍色與綠色通道峰值分離度極高，非常適合需要高辨識度的彩色檢測。
+                        </li>
+                        <li>
+                            <b>平滑色彩響應</b>
+                            XLP系列強調色彩的過渡自然，其 RGB 響應曲線更為平滑，能更好地還原複雜背景下的色調層次。
+                        </li>
+                        <li>
+                            <b>高動態範圍</b>
+                            全系列具備 63.5 dB 的動態範圍，能有效解決金屬反光或高對比物件的成像遺失問題。
+                        </li>
+                    </ul>
+                </div>
 
-                    // 優先使用 camera_data.js 中的變數
-                    if (typeof CAMERA_CSV_DATA !== 'undefined') {
-                        csvContent = CAMERA_CSV_DATA;
-                    } else {
-                        // 備用：嘗試讀取 CSV (適用於網頁伺服器環境)
-                        try {
-                            const response = await fetch('products/camera/camera_specs.csv');
-                            if (response.ok) csvContent = await response.text();
-                        } catch (e) {
-                            console.error("無法載入數據");
-                        }
-                    }
+                <div class="info-card">
+                    <h3>物理設計與環境標準</h3>
+                    <ul class="info-list">
+                        <li>
+                            <b>專業鏡頭接口</b>
+                            全系列標配 M90 × 1 工業接口 (光学后焦 12mm / 法兰后焦 12mm)，支援超大口徑、高像質鏡頭。
+                        </li>
+                        <li>
+                            <b>12-Pin 接口定義</b>
+                            標準化的 12-Pin 接口，整合電源、觸發信號 (TRIG) 及專用頻閃輸出 (FLASH OUT) 功能。
+                        </li>
+                        <li>
+                            <b>工業防護等級</b>
+                            具備 IP40 等級防護能力，機身材質堅固，能承受工業現場的高強度運作。
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-                    if (!csvContent) return;
+            <!-- Software section -->
+            <div class="architecture-box"
+                style="border-left-color: var(--secondary); background: rgba(99, 102, 241, 0.05);">
+                <h3>軟體環境與軟體支持</h3>
+                <div class="architecture-grid">
+                    <div class="arch-item">
+                        <h4>開發支持 SDK</h4>
+                        <p>配套 BasedCam3 開發包，含專業演示、校正軟體與完整 API 範例。</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>多系統相容</h4>
+                        <p>原生支援 Windows 7 / 10 (64bits)；相容 LabView, Halcon 等軟體。</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>通訊標準</h4>
+                        <p>XLP 系列符合全球通用 GigEVision、GenICam 標準，隨插即用。</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>環境參數</h4>
+                        <p>具備 CE、RoHS 認證；工作溫度範圍達 0°C ~ 50°C (DXL) / -10°C ~ 50°C (XLP)。</p>
+                    </div>
+                </div>
+            </div>
 
-                    const rows = csvContent.split('\n').filter(row => row.trim() !== '');
+            <!-- Selection Guide -->
+            <div class="guide-section">
+                <h2 class="section-title text-center" style="display:block;">選型建議總結</h2>
+                <p style="text-align:center; color: var(--text-gray); margin-top: -2rem;">您的應用情境決定最佳相機型號</p>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <h4>選擇 <strong>DXL16K12CT</strong> 如果...</h4>
+                        <p>您需要極致的感光能力 (TDI) 以及高達 20G 的自研傳輸協議，主攻高速、低光源精密檢測。</p>
+                    </div>
+                    <div class="guide-card">
+                        <h4>選擇 <strong>DXL16K6C</strong> 如果...</h4>
+                        <p>您關注高保真色彩表現，並需要在高速產線與檢測精細度之間取得絕佳平衡。</p>
+                    </div>
+                    <div class="guide-card" style="border-top-color: var(--secondary);">
+                        <h4>選擇 <strong>XLP16K3C</strong> 如果...</h4>
+                        <p>您的設備安裝空間極為受限 (55.5mm 深度)，或需要標準萬兆網接口與更低的系統功耗。</p>
+                    </div>
+                </div>
+            </div>
 
-                    if (rows.length > 0) {
-                        headerRow.innerHTML = "";
-                        const headers = rows[0].split(',');
-                        headers.forEach(header => {
-                            const th = document.createElement('th');
-                            th.textContent = header.trim();
-                            headerRow.appendChild(th);
-                        });
-
-                        tableBody.innerHTML = "";
-                        for (let i = 1; i < rows.length; i++) {
-                            const cells = rows[i].split(',');
-                            const tr = document.createElement('tr');
-                            cells.forEach((cell, index) => {
-                                const td = document.createElement('td');
-                                let content = cell.trim();
-                                if (index === 0) td.classList.add('model-name');
-                                else if (index === 1) {
-                                    const tagClass = content.toLowerCase().includes('area') ? 'tag-area' : 'tag-line';
-                                    td.innerHTML = `<span class="tag ${tagClass}">${content}</span>`;
-                                }
-                                if (!td.innerHTML) td.textContent = content;
-                                tr.appendChild(td);
-                            });
-                            tableBody.appendChild(tr);
-                        }
-                    }
-                }
-
-                document.addEventListener('DOMContentLoaded', loadCameraSpecs);
-            </script>
+            <!-- CTA -->
+            <div style="text-align: center; margin-bottom: 8rem;">
+                <p style="color: var(--text-gray); margin-bottom: 2rem;">天目科技專業團隊隨時為您的光學選型提供技術支援</p>
+                <a href="contact.html" class="btn-card"
+                    style="padding: 1.2rem 4rem; font-size: 1.2rem; border-radius: 50px;">
+                    聯繫技術專員獲取選型建議書
+                </a>
+            </div>
         </section>
     </main>
 

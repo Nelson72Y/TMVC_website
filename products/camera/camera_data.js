@@ -4,4 +4,7 @@ TM-A900,Area Scan,5.0 MP,IMX264,GigE,35 fps,3.45 um,General Inspection
 TM-A2500,Area Scan,25.0 MP,GMAX0505,CoaXPress,150 fps,2.5 um,High-speed PCB
 TM-L8K,Line Scan,8192 px,CMOS,Camera Link,80 kHz,7.0 um,Web Inspection
 TM-S120,Smart Camera,1.2 MP,IMX273,Ethernet,40 fps,3.45 um,Code Reading
-TM-SW640,SWIR,0.3 MP,InGaAs,USB 3.0,60 fps,15.0 um,Silicon Inspection`;
+TM-SW640,SWIR,0.3 MP,InGaAs,USB 3.0,60 fps,15.0 um,Silicon Inspection
+DXL16K12CT,Line Scan,16K (16384x12),CMOS TDI,20G Fiber,40.5 kHz,5.0 um,High Sensitivity Fast Inspection
+DXL16K6C,Line Scan,16K (16384x6),CMOS 6Line,20G Fiber,40.0 kHz,5.0 um,High Color Fidelity Inspection
+XLP16K3C,Line Scan,16K (16384x3),CMOS 3Line,10G Fiber,29.0 kHz,5.0 um,Compact Low Power Inspection`;
