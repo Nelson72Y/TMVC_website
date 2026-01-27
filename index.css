@@ -311,3 +311,105 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* AI Showcase Section */
+.ai-showcase {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(15, 23, 42, 0.8) 100%);
+    overflow: hidden;
+}
+
+.ai-showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.ai-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.ai-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+.ai-features-list {
+    margin-bottom: 3rem;
+}
+
+.ai-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.ai-feature-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.ai-feature-text h4 {
+    color: var(--text-light);
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.ai-feature-text p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.ai-image-box {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ai-image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: scale(1.02);
+    transition: transform 0.7s ease;
+}
+
+.ai-image-box:hover img {
+    transform: scale(1.06);
+}
+
+@media (max-width: 900px) {
+    .ai-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .ai-showcase {
+        padding: 4rem 0;
+    }
+
+    .ai-content h2 {
+        font-size: 2rem;
+    }
+}
