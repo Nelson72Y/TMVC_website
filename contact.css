@@ -110,6 +110,20 @@ textarea {
     transition: all 0.3s ease;
 }
 
+.phone-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-input-container select {
+    width: 160px;
+    flex-shrink: 0;
+}
+
+.phone-input-container input {
+    flex: 1;
+}
+
 input:focus,
 select:focus,
 textarea:focus {

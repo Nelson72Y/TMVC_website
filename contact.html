@@ -126,7 +126,7 @@
                     <!-- 注意：目前已更換為 Formspree 正式 ID：xaqopqpa 接收郵件 -->
                     <form id="contactForm" action="https://formspree.io/f/xaqopqpa" method="post">
                         <!-- 隱藏欄位：自定義郵件主題 -->
-                        <input type="hidden" name="_subject" value="來自官網的新客戶諮詢">
+                        <input type="hidden" name="_subject" value="來自TMVC官網的新客戶諮詢">
 
                         <div class="form-row">
                             <div class="form-group">
@@ -134,26 +134,44 @@
                                 <input type="text" id="name" name="name" required placeholder="請輸入姓名">
                             </div>
                             <div class="form-group">
-                                <label for="company">公司名稱</label>
-                                <input type="text" id="company" name="company" placeholder="請輸入公司全銜">
+                                <label for="company">公司名稱 <span>*</span></label>
+                                <input type="text" id="company" name="company" required placeholder="請輸入公司全銜">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="service@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tel">聯絡電話 <span>*</span></label>
+                            <div class="phone-input-container">
+                                <select id="country_code" name="country_code" required>
+                                    <option value="+886" selected>(+886) 台灣</option>
+                                    <option value="+86">(+86) 中國</option>
+                                    <option value="+852">(+852) 香港</option>
+                                    <option value="+853">(+853) 澳門</option>
+                                    <option value="+1">(+1) 美國/加拿大</option>
+                                    <option value="+44">(+44) 英國</option>
+                                    <option value="+49">(+49) 德國</option>
+                                    <option value="+60">(+60) 馬來西亞</option>
+                                    <option value="+61">(+61) 澳洲</option>
+                                    <option value="+65">(+65) 新加坡</option>
+                                    <option value="+66">(+66) 泰國</option>
+                                    <option value="+81">(+81) 日本</option>
+                                    <option value="+82">(+82) 韓國</option>
+                                    <option value="+84">(+84) 越南</option>
+                                </select>
+                                <input type="tel" id="tel" name="tel" required placeholder="02-12345678">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="email">Email <span>*</span></label>
-                                <input type="email" id="email" name="email" required placeholder="service@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="tel">聯絡電話</label>
-                                <input type="tel" id="tel" name="tel" placeholder="02-12345678">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="q_type">問題類型</label>
-                                <select id="q_type" name="q_type">
+                                <label for="q_type">問題類型 <span>*</span></label>
+                                <select id="q_type" name="q_type" required>
+                                    <option value="" disabled selected>請選擇問題類型</option>
                                     <option value="quote">產品詢價</option>
                                     <option value="support">技術支援</option>
                                     <option value="project">專案合作</option>
@@ -161,12 +179,14 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="p_cat">產品分類</label>
-                                <select id="p_cat" name="p_cat">
+                                <label for="p_cat">產品分類 <span>*</span></label>
+                                <select id="p_cat" name="p_cat" required>
+                                    <option value="" disabled selected>請選擇產品分類</option>
                                     <!-- <option value="camera">工業相機</option> -->
                                     <option value="instrument">量測儀器</option>
                                     <option value="software">AI 影像檢測軟體</option>
-                                    <option value="service" selected>專案設計服務</option>
+                                    <option value="service">專案設計服務</option>
+                                    <option value="other">其他</option>
                                 </select>
                             </div>
                         </div>
