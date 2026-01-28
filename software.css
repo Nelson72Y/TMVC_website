@@ -70,6 +70,49 @@
 
 .challenge-card p {
     color: var(--text-dim);
+    margin-bottom: 2rem;
+}
+
+.pain-point {
+    position: relative;
+    border-color: rgba(249, 115, 22, 0.2);
+}
+
+.pain-point:hover {
+    border-color: #f97316 !important;
+    box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.2) !important;
+}
+
+.pain-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #f97316;
+    background: rgba(249, 115, 22, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    letter-spacing: 0.05em;
+}
+
+.solution-tag {
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px dashed var(--primary);
+    color: var(--primary);
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+.pain-point:hover .solution-tag {
+    background: var(--primary);
+    color: white;
+    border-style: solid;
 }
 
 .tech-highlights {
@@ -85,32 +128,89 @@
 }
 
 .highlight-item {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
+    background: rgba(30, 41, 59, 0.4);
+    padding: 2rem;
+    border-radius: 20px;
     border: 1px solid var(--glass-border);
-    border-left: 4px solid var(--sw-primary);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-main);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
 }
 
 .highlight-item:hover {
-    background: rgba(59, 130, 246, 0.1);
-    border-color: var(--sw-primary);
-    transform: scale(1.05);
+    background: rgba(14, 165, 233, 0.05);
+    border-color: rgba(14, 165, 233, 0.4);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.3);
+}
+
+.highlight-item:hover::before {
+    opacity: 1;
+}
+
+.highlight-icon-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(14, 165, 233, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover .highlight-icon-box {
+    background: var(--gradient-main);
+    color: white;
+    transform: rotate(5deg);
 }
 
 .highlight-item h4 {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    letter-spacing: 0.02em;
 }
 
 .highlight-item p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-gray);
+    line-height: 1.5;
+    margin-bottom: 0;
 }
 
 .workflow-section {
     padding: 100px 0;
+}
+
+.section-subtitle-premium {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(14, 165, 233, 0.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(14, 165, 233, 0.2);
 }
 
 .workflow-steps {
