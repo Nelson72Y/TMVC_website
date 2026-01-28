@@ -312,18 +312,65 @@ footer {
     }
 }
 
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+}
+
+.ai-floating-card {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ai-floating-card:hover {
+    transform: scale(1.05) translateY(-20px) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.5) !important;
+}
+
 /* AI Showcase Section */
 .ai-showcase {
-    padding: 6rem 0;
-    background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(15, 23, 42, 0.8) 100%);
+    padding: 8rem 0;
+    background: #020617;
+    position: relative;
     overflow: hidden;
+}
+
+.ai-showcase::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 50%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.ai-showcase::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 40%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+    z-index: 0;
 }
 
 .ai-showcase-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .ai-content h2 {
@@ -331,6 +378,7 @@ footer {
     margin-bottom: 0.5rem;
     background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
 }
@@ -338,8 +386,9 @@ footer {
 .ai-content h3 {
     font-size: 1.5rem;
     color: var(--primary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 .ai-features-list {
@@ -354,16 +403,24 @@ footer {
 }
 
 .ai-feature-icon {
-    width: 48px;
-    height: 48px;
-    background: rgba(14, 165, 233, 0.1);
+    width: 54px;
+    height: 54px;
+    background: rgba(14, 165, 233, 0.08);
     border: 1px solid rgba(14, 165, 233, 0.2);
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary);
     flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.ai-feature-item:hover .ai-feature-icon {
+    background: var(--gradient-main);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.4);
 }
 
 .ai-feature-text h4 {
