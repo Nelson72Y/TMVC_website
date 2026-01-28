@@ -27,43 +27,57 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header id="mainHeader">
         <div class="container nav-container">
             <a href="index.html" class="logo">天目科技</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">首頁</a></li>
-                    <li><a href="about.html">關於我們</a></li>
-                    <li><a href="products.html">產品介紹</a></li>
-                    <li><a href="support.html">技術支援</a></li>
-                    <li><a href="downloads.html" class="active">下載專區</a></li>
-                    <li><a href="contact.html">客戶服務</a></li>
-                    <li>
-                        <button class="theme-toggle" id="themeToggle" title="切換亮/暗模式">
-                            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                            </svg>
-                            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="5"></circle>
-                                <line x1="12" y1="1" x2="12" y2="3"></line>
-                                <line x1="12" y1="21" x2="12" y2="23"></line>
-                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                                <line x1="1" y1="12" x2="3" y2="12"></line>
-                                <line x1="21" y1="12" x2="23" y2="12"></line>
-                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                            </svg>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
+
+            <div class="header-right" style="display: flex; align-items: center; gap: 2rem;">
+                <nav id="navMenu">
+                    <ul>
+                        <li><a href="index.html">首頁</a></li>
+                        <li><a href="about.html">關於我們</a></li>
+                        <li><a href="products.html">產品介紹</a></li>
+                        <li><a href="support.html">技術支援</a></li>
+                        <li><a href="downloads.html" class="active">下載專區</a></li>
+                        <li><a href="contact.html">客戶服務</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions" style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="theme-toggle" id="themeToggle" title="切換亮/暗模式">
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+
+                    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="切換選單">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
 
     <!-- Main Content -->
     <main>
@@ -328,10 +342,12 @@
                 <div class="footer-col">
                     <h4>快速連結</h4>
                     <ul style="line-height: 2.2;">
-                        <li><a href="#" style="color: var(--text-gray);">最新消息</a></li>
-                        <li><a href="products.html" style="color: var(--text-gray);">產品中心</a></li>
-                        <li><a href="#" style="color: var(--text-gray);">成功案例</a></li>
+                        <li><a href="index.html" style="color: var(--text-gray);">首頁</a></li>
                         <li><a href="about.html" style="color: var(--text-gray);">關於我們</a></li>
+                        <li><a href="products.html" style="color: var(--text-gray);">產品介紹</a></li>
+                        <li><a href="support.html" style="color: var(--text-gray);">技術支援</a></li>
+                        <li><a href="downloads.html" style="color: var(--text-gray);">下載專區</a></li>
+                        <li><a href="contact.html" style="color: var(--text-gray);">客戶服務</a></li>
                     </ul>
                 </div>
 
@@ -386,15 +402,60 @@
     </footer>
 
     <script>
+        // 主題切換邏輯
         const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                sessionStorage.setItem('theme', newTheme);
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            sessionStorage.setItem('theme', newTheme);
+        });
+
+        // 滾動行為邏輯 (Hide/Show Header)
+        const header = document.getElementById('mainHeader');
+        let lastScroll = 0;
+        const scrollThreshold = 100;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                header.classList.remove('header-hidden');
+                header.classList.remove('header-scrolled');
+                return;
+            }
+
+            if (currentScroll > scrollThreshold) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+
+            if (currentScroll > lastScroll && !document.body.classList.contains('nav-active')) {
+                header.classList.add('header-hidden');
+            } else {
+                header.classList.remove('header-hidden');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // 行動版選單切換
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const navOverlay = document.getElementById('navOverlay');
+        const navLinks = document.querySelectorAll('#navMenu a');
+
+        const toggleNav = () => {
+            document.body.classList.toggle('nav-active');
+        };
+
+        mobileNavToggle.addEventListener('click', toggleNav);
+        navOverlay.addEventListener('click', toggleNav);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.body.classList.remove('nav-active');
             });
-        }
+        });
     </script>
 </body>
 
