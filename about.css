@@ -235,18 +235,26 @@ figcaption p {
 }
 
 .industry-tag {
-    background: rgba(30, 41, 59, 0.4);
+    background: var(--card-bg);
     border: 1px solid var(--glass-border);
-    padding: 1.5rem;
-    border-radius: 12px;
-    color: var(--text-dim);
-    transition: 0.3s;
+    padding: 1.25rem;
+    border-radius: 16px;
+    color: var(--text-light);
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-align: center;
 }
 
 .industry-tag:hover {
-    background: rgba(14, 165, 233, 0.1);
-    color: var(--accent);
+    background: var(--primary);
+    color: white;
     border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.4);
 }
 
 /* Footer (Same as index) */

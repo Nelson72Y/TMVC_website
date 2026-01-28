@@ -99,3 +99,23 @@
     font-size: 0.8rem;
     font-weight: 600;
 }
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .product-highlight {
+        padding: 1.5rem;
+    }
+
+    .highlight-content {
+        gap: 2rem;
+    }
+
+    .highlight-text,
+    .highlight-image {
+        min-width: 100%;
+    }
+
+    .highlight-image {
+        height: 200px;
+    }
+}
