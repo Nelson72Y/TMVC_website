@@ -27,7 +27,7 @@
 
 .advantage-section {
     padding: 5rem 0;
-    background: rgba(15, 23, 42, 0.3);
+    background: var(--section-bg);
     border-top: 1px solid var(--glass-border);
     border-bottom: 1px solid var(--glass-border);
     margin-bottom: 6rem;

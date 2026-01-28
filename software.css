@@ -4,8 +4,8 @@
     --sw-primary: #3b82f6;
     --sw-secondary: #0ea5e9;
     --sw-accent: #6366f1;
-    --sw-bg-dark: #0f172a;
-    --sw-card-bg: #1e293b;
+    --sw-bg-dark: var(--dark-bg);
+    --sw-card-bg: var(--card-bg);
 }
 
 .software-hero {
@@ -128,7 +128,7 @@
 }
 
 .highlight-item {
-    background: rgba(30, 41, 59, 0.4);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 20px;
     border: 1px solid var(--glass-border);

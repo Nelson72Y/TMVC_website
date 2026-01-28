@@ -27,19 +27,21 @@
 }
 
 .contact-card {
-    background: rgba(30, 41, 59, 0.3);
+    background: var(--card-bg);
     border: 1px solid var(--glass-border);
     padding: 2rem;
     border-radius: 20px;
     display: flex;
     gap: 1.5rem;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
 }
 
 .contact-card:hover {
     border-color: var(--primary);
-    background: rgba(30, 41, 59, 0.5);
+    background: var(--card-bg);
     transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px var(--shadow-color);
 }
 
 .icon-box {
@@ -66,11 +68,12 @@
 
 /* Form Section */
 .form-section {
-    background: rgba(30, 41, 59, 0.4);
+    background: var(--card-bg);
     border: 1px solid var(--glass-border);
     padding: 3.5rem;
     border-radius: 24px;
     backdrop-filter: blur(10px);
+    box-shadow: 0 20px 25px -5px var(--shadow-color);
 }
 
 .form-group {
@@ -100,7 +103,7 @@ input,
 select,
 textarea {
     width: 100%;
-    background: rgba(15, 23, 42, 0.6);
+    background: var(--input-bg);
     border: 1px solid var(--glass-border);
     padding: 0.85rem 1.25rem;
     border-radius: 12px;
@@ -171,9 +174,10 @@ textarea {
 
 /* Footer */
 footer {
-    background: #020617;
+    background: var(--footer-bg);
     padding: 5rem 0 2rem;
     border-top: 1px solid var(--glass-border);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-grid {

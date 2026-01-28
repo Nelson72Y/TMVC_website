@@ -54,7 +54,7 @@
 }
 
 .specs-table th {
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--nav-bg);
     color: var(--secondary);
     width: 30%;
     font-weight: 600;

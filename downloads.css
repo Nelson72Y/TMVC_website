@@ -41,7 +41,7 @@
 }
 
 .download-item {
-    background: rgba(30, 41, 59, 0.3);
+    background: var(--card-bg);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 2rem;
@@ -50,13 +50,14 @@
     align-items: center;
     gap: 2rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
 }
 
 .download-item:hover {
-    background: rgba(30, 41, 59, 0.6);
+    background: var(--card-bg);
     border-color: var(--primary);
     transform: translateX(10px);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px -10px var(--shadow-color);
 }
 
 /* File Type Tags */
@@ -172,10 +173,11 @@
 }
 
 .disclaimer-box {
-    background: rgba(15, 23, 42, 0.5);
+    background: var(--card-bg);
     border: 1px solid var(--glass-border);
     padding: 3rem;
     border-radius: 24px;
+    box-shadow: 0 10px 15px -3px var(--shadow-color);
 }
 
 .disclaimer-box h4 {
@@ -214,9 +216,10 @@
 
 /* Footer (Standardized) */
 footer {
-    background: #020617;
+    background: var(--footer-bg);
     padding: 5rem 0 2rem;
     border-top: 1px solid var(--glass-border);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-grid {

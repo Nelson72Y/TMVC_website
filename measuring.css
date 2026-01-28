@@ -76,7 +76,7 @@
 .highlight-image {
     flex: 1;
     min-width: 300px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--input-bg);
     border-radius: 16px;
     height: 300px;
     display: flex;

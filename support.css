@@ -87,7 +87,7 @@
 }
 
 details {
-    background: rgba(30, 41, 59, 0.3);
+    background: var(--card-bg);
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     margin-bottom: 1.25rem;
@@ -103,8 +103,8 @@ details:hover {
 
 details[open] {
     border-color: var(--primary);
-    background: rgba(15, 23, 42, 0.8);
-    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+    background: var(--card-bg);
+    box-shadow: 0 20px 40px -20px var(--shadow-color);
 }
 
 summary {
@@ -190,8 +190,9 @@ details[open] summary::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--nav-bg);
     z-index: 0;
+    opacity: 0.9;
 }
 
 .rma-content {
@@ -223,9 +224,10 @@ details[open] summary::after {
 
 /* Footer */
 footer {
-    background: #020617;
+    background: var(--footer-bg);
     padding: 5rem 0 2rem;
     border-top: 1px solid var(--glass-border);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-grid {
