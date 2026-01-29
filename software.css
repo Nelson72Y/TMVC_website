@@ -34,7 +34,7 @@
 }
 
 .software-hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
     background: linear-gradient(to right, #fff, #94a3b8);
     -webkit-background-clip: text;
     background-clip: text;
@@ -44,7 +44,7 @@
 
 .challenge-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -122,7 +122,7 @@
 
 .highlights-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
     margin-top: 3rem;
 }
@@ -297,7 +297,7 @@
 
 .case-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     margin-top: 3rem;
 }
@@ -361,9 +361,45 @@
     margin: 4rem 0;
 }
 
+.architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
 @media (max-width: 768px) {
     .workflow-steps {
         flex-direction: column;
         align-items: center;
+    }
+
+    .arch-box {
+        padding: 2.5rem 1.5rem;
+        margin: 2rem 0;
+        border-radius: 20px;
+    }
+
+    .architecture-grid {
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .case-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .challenge-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .architecture-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
     }
 }
