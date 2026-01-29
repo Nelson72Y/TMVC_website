@@ -308,28 +308,30 @@ header {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
+    height: 42px;
+    /* Set a consistent height for the logo container */
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
     background: var(--gradient-main);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-decoration: none;
 }
 
-.logo::before {
-    content: '';
-    display: block;
-    width: 28px;
-    height: 28px;
-    background: var(--gradient-main);
-    border-radius: 6px;
-    transform: rotate(45deg);
-}
 
 nav ul {
     display: flex;
